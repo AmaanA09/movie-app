@@ -1,0 +1,5 @@
+const allMovies = 'https://api.themoviedb.org/3/movie/popular'
+const getMoviesDetail= 'https://api.themoviedb.org/3/movie/'
+const getUpComingMovies = 'https://api.themoviedb.org/3/movie/upcoming'
+const getTopRatedMovies = 'https://api.themoviedb.org/3/movie/top_rated?api_key=${Api_key}&language=en-US&page=1'
+const getSerchResult = 'https://api.themoviedb.org/3/search/movie?api_key=${Api_key}&language=en-US&query=${movie_name}&page=1'
