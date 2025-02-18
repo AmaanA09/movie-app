@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className="hidden sm:flex sm:gap-6 sm:items-center">
           <NavLink
             to="/"
-            className="text-lg hover:text-[#B31312] transition duration-300 ease-in-out"
+            className='text-lg hover:text-[#B31312] transition duration-300 ease-in-out'
           >
             Home
           </NavLink>

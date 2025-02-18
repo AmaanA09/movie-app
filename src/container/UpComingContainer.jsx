@@ -19,6 +19,8 @@ const UpComingContainer = () => {
   useEffect(() => {
     fetchAllMovies()
   }, [pageNo])
+
+
   return (
     <>
       {isLoading ? (<div className='loader-wrap'>
