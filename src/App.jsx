@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router'
 import { HomePage } from './pages/HomePage'

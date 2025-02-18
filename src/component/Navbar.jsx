@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -17,14 +17,20 @@ const Navbar = () => {
 
   const handleSearch = () => {
     console.log('Searching for:', searchQuery);
-    navigate(`/searchmovies?${searchQuery}`)
+    if(searchQuery){
+      navigate(`/searchmovies?${searchQuery}`)
+      setSearchQuery("")
+    }else{
+      return alert("please enter the movie name")
+    }
   };
 
   return (
+    <>
     <header className="bg-[#33393f] text-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 py-6 flex justify-between items-center">
         <div>
-          <Link to="/" className="text-3xl font-bold text-[#fff]">
+          <Link to="/" className="pl-4 text-3xl font-bold text-[#fff]">
             MovieDb
           </Link>
         </div>
@@ -102,15 +108,17 @@ const Navbar = () => {
               onChange={handleSearchChange}
             />
             <button
+              // onClick={()=> (searchQuery == "" ? handleSearch() : handleSearchEmpty())}
               onClick={handleSearch}
               className=" cursor-pointer bg-[#B31312] text-white px-4 py-2 rounded-lg"
             >
               Search
             </button>
-          </div>
+          </div> 
         </div>
       )}
     </header>
+    </>
   );
 };
 
