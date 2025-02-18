@@ -1,25 +1,23 @@
 
 import { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate()
 
-  // Toggle the mobile menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Handle search query input
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  // Handle search button click
   const handleSearch = () => {
-    // Logic for searching (could navigate to a search page or fetch results)
     console.log('Searching for:', searchQuery);
+    navigate(`/searchmovies?${searchQuery}`)
   };
 
   return (
