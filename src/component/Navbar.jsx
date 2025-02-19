@@ -25,6 +25,12 @@ const Navbar = () => {
     }
   };
 
+const handleKeyPress = (e) =>{
+ if(e.key === "Enter"){
+  handleSearch()
+ }
+}
+
   return (
     <>
     <header className="bg-[#33393f] text-white shadow-lg sticky top-0 z-50">
@@ -62,6 +68,7 @@ const Navbar = () => {
               className="px-4 py-2 rounded-lg text-black bg-white"
               value={searchQuery}
               onChange={handleSearchChange}
+              onKeyDown={handleKeyPress}
             />
             <button
               onClick={handleSearch}
@@ -106,6 +113,7 @@ const Navbar = () => {
               className="px-4 py-2 rounded-lg  bg-[#fff] text-[#000]"
               value={searchQuery}
               onChange={handleSearchChange}
+              onKeyDown={handleKeyPress}
             />
             <button
               // onClick={()=> (searchQuery == "" ? handleSearch() : handleSearchEmpty())}
